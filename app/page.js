@@ -9,98 +9,97 @@ export default function Home() {
     {
       img:profile,
       name:'Ayush',
-      text:'Hello what are you doing....',
+      text:'Here shaw itself',
       time:'16:11',
       chats:[
         'hello',
-        'hi',
-        'myself'
+        'How may i help you?',
       ]
     },
     {
       img:profile,
       name:'Arun',
-      text:'Hello what are you doing....',
+      text:'kya hal hai',
       time:'16:11',
       chats:[
-        'hello',
-        'hi',
-        'myself'
+        'hello Brother',
+        'kya hal hai',
+        
       ]
 
     },
     {
       img:profile,
       name:'Abhinandan',
-      text:'Hello what are you doing....',
+      text:'kya beta kya kr rha hai',
       time:'16:11',
       chats:[
-        'hello',
-        'hi',
-        'myself'
+        'kya be',
+        'bnaliya project',
+        'jaldi kro'
       ]
     },
     {
       img:profile,
       name:'Golu',
-      text:'Hello what are you doing....',
+      text:'okkk<<',
       time:'16:11',
       chats:[
-        'hello',
-        'hi',
-        'myself'
+        'kya golu',
+        'kya haal chal',
+        'tab kab hai program'
       ]
     },
     {
       img:profile,
       name:'Deepak',
-      text:'Hello what are you doing....',
+      text:'hnn jaldi',
       time:'16:11',
       chats:[
-        'hello',
-        'hi',
-        'myself'
+        'kha hai deepak bhai',
+        'jaldi aao',
+        'lafda hogya hai'
       ]
     },
     {
       img:profile,
       name:'Munquab',
-      text:'Hello what are you doing....',
+      text:'bilkul',
       time:'16:11',
       chats:[
-        'hello',
-        'hi',
-        'myself'
+        'kya janab',
+        'thoda 12th ka fake result chahiye tha',
+        'Bihar board ka'
       ]
     },{
       img:profile,
       name:'Akash',
-      text:'Hello what are you doing....',
+      text:'jaldi aao',
       time:'16:11',
       chats:[
-        'hello',
-        'hi',
-        'myself'
+        'kitne baje jana hai ajj bro',
+        'okk',
+        'free hoke batana'
       ]
     },{
       img:profile,
       name:'Harsha',
-      text:'Hello what are you doing....',
+      text:'kuch khayega kya',
       time:'16:11',
       chats:[
-        'hello',
-        'hi',
-        'myself'
+        'Dehydrate hogya kya',
+        'cold drink chaiye',
+        'kidar h bro tum'
       ]
     },{
       img:profile,
       name:'Beti',
-      text:'Hello what are you doing....',
+      text:'abb me kya kru',
       time:'16:11',
       chats:[
-        'hello',
-        'hi',
-        'myself'
+        'parshan hu zindagi s mein',
+        'ruk ata hoo',
+        'hmm'
       ]
 
     },
@@ -115,14 +114,14 @@ export default function Home() {
 <div className="mt-4 bg-white flex flex-row " style={{ height: '91vh' }}>
 <div className="1/12 bg-gray-300 " style={{ height: '91vh' }}>
   <div className="flex flex-col ml-2 ">
-    <div className="my-4"> 
-    <Image src={chat_icon} className="w-10 h-10"/>
+    <div className="my-4 mx-2"> 
+    <Image src={chat_icon} className="w-6 h-6"/>
     </div>
     <div className="my-4 mx-2"> 
-    <Image src={phone_icon} className="w-10 h-10"/>
+    <Image src={phone_icon} className="w-6 h-6"/>
     </div>
     <div className="my-4 mx-2"> 
-    <Image src={status_icon} className="w-10 h-10"/>
+    <Image src={status_icon} className="w-6 h-6"/>
     </div>
   </div>
 

@@ -2,12 +2,32 @@
 
 import Image from "next/image"
 import student_icon  from "../public/Assets/Images/student_icon.png"
-import { useState } from "react"
+import { useRef, useState } from "react"
+import enter from "../public/Assets/Images/enter.png"
+import emoji from "../public/Assets/Images/emoji.png"
+import documnet from "../public/Assets/Images/document.png"
+import search from "../public/Assets/Images/search.png"
+import phone from "../public/Assets/Images/phone_icon.png"
+import video from "../public/Assets/Images/video.png"
 export default function Card({card_data}){
-    const [storedata, setdata] = useState({});
+    const textarea = useRef(null);
+    const [storedata, setdata] = useState({name:'username', chats:['Hi', 'Ayush']});
     function getdata(datagetting){
         setdata(datagetting);
     }
+
+    function handletextsubmit(e){
+        var chat = textarea.current.value;
+        // console.log(chat);
+        if(chat != ''){
+            const newchats = [...storedata.chats, chat];
+            setdata({...storedata, chats:newchats});
+            textarea.current.value = '';
+            textarea.current.focus();
+        }
+       
+    }
+
 return (<>
 <div className="flex flex-row">
 <div className="border-r-2 border-solid border-black">
@@ -41,7 +61,7 @@ return (<>
             <span className="inline-block ">
 <Image src={student_icon} className="w-8 h-8 mt-6 ml-4 rounded-full"/>
             </span>
-                <span className="inline-block ml-4">
+                <span className="inline-block ml-4 hover:cursor-pointer">
 
                     <p className=" text-xl font-bold font-sans">
                          {storedata.name}
@@ -51,48 +71,47 @@ return (<>
 
 
                 <span className="flex float-right mt-4">
-                <span className=" inline-block ml-6 hover:bg-gray-100 px-4">
-                <Image src={student_icon} className="w-8 h-8" />
+                <span className=" inline-block ml-6  border px-2 border-solid border-black border-r-0 hover:bg-gray-200 hover:cursor:pointer">
+                <Image src={phone} className="w-6 h-6 mt-1" />
             </span>
-            <span className=" inline-block">
-                <Image src={student_icon} className="w-8 h-8" />
+            <span className=" inline-block border border-solid border-black px-2 hover:cursor:pointer hover:bg-gray-200"  >
+                <Image src={video} className="w-8 h-8" />
             </span>
-            <span className=" inline-block ml-6">
-                <Image src={student_icon}className="w-8 h-8" />
+            <span className=" inline-block ml-6 ">
+                <Image src={search} className="w-8 h-8 hover:cursor-pointer" />
             </span>
                 </span>
             </div>
             <div className="bg-gray-100 mx-auto overflow-scroll" style={{height:'71vh', scrollbarWidth:'none'}}>
-{/* {storedata.chats.map((chatsdata, index) =>{
-    {chatsdata}
-})} */}
+{storedata.chats.map((chatsdata, index) =>(
+
+   <p className="text-right my-4 px-8" key={index} >
+
+   <span className="bg-gray-300 hover:bg-gray-200 hover:cursor-pointer pl-16 pr-4 py-2 rounded-md inline-block " >
+   {chatsdata}
+   </span>
+   </p> 
+))}
             </div>
             <div className="flex align-middle">
-                <span className="inline-block ml-4">
-                    <Image src={student_icon} className="h-8 w-8 mt-2 "/>
+                <span className="inline-block ml-4 mt-2">
+                    <Image src={emoji} className="h-6 w-6 mt-2 "/>
                 </span>
 
-                <span className="inline-block ml-8">
-                    <Image src={student_icon} className="h-8 w-8 mt-2 "/>
+                <span className="inline-block ml-8 mt-2">
+                    <Image src={documnet} className="h-6 w-6 mt-2 "/>
                 </span>
+                
                 <span className="inline-block ml-4">
-                <textarea placeholder="Type a message" className="focus:border-0 focus:outline-0 overflow-x-scroll resize-none mt-3 " style={{width:'50vw', scrollbarWidth:'none'}}/>
+                <textarea placeholder="Type a message" className="focus:border-0 focus:outline-0 overflow-x-scroll resize-none mt-3 " style={{width:'50vw', scrollbarWidth:'none'}}  ref={textarea}/>
                 </span>
-                <span className="inline-block ml-8">
-                    <Image src={student_icon} className="h-8 w-8 mt-2 "/>
+                <span className="inline-block ml-8 hover:cursor-pointer" onClick={handletextsubmit} >
+                    <Image src={enter} className="h-8 w-8 mt-2 rounded-md"/>
                 </span>
             </div>
             </div>
 </div>
 </>)
 }
-// const Chats_card = () => {
-//     return (
-//         <>
-           
-//         </>
-//     )
-// }
 
 
-// export {Chats_card};
